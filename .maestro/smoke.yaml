@@ -1,0 +1,5 @@
+appId: com.example.infovida
+---
+- launchApp
+- assertVisible: "InfoVida"
+- assertVisible: "Your Expo development environment is ready."

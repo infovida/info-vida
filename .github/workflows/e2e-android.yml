@@ -1,0 +1,45 @@
+name: E2E Android
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: e2e-android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  maestro:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build Android test binary
+        run: npx expo prebuild --platform android --no-install && cd android && ./gradlew assembleRelease
+      - name: Install Maestro
+        run: curl -fsSL "https://get.maestro.mobile.dev" | bash
+      - name: Start emulator and run flows
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          script: |
+            adb install android/app/build/outputs/apk/release/app-release.apk
+            $HOME/.maestro/bin/maestro test .maestro/smoke.yaml
+      - name: Upload Maestro artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: maestro-artifacts-${{ github.sha }}
+          path: ~/.maestro/tests/
+          if-no-files-found: ignore
+          retention-days: 14

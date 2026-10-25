@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "InfoVida",
+    "slug": "infovida",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "infovida",
+    "newArchEnabled": true,
+    "plugins": [
+      "expo-router",
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.infovida"
+    },
+    "android": {
+      "package": "com.example.infovida"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

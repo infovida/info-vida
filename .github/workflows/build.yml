@@ -1,0 +1,42 @@
+name: Build EAS
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platform to build
+        required: true
+        default: all
+        type: choice
+        options: [all, android, ios]
+      profile:
+        description: EAS build profile
+        required: true
+        default: preview
+        type: choice
+        options: [development, preview, production]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eas-build-${{ inputs.platform }}-${{ inputs.profile }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate before building
+        run: npm run validate
+      - name: Request EAS build
+        run: npx eas-cli@latest build --non-interactive --no-wait --platform "${{ inputs.platform }}" --profile "${{ inputs.profile }}"
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
