@@ -5,6 +5,9 @@ localmente; PRDs 007–009 parcialmente implementados em demonstração. Confer�
 Base executável: `InfoVida/`, Expo SDK 58, React Native, TypeScript e Expo Router.
 Referência visual: `InfoVida_FigmaMake/`, exportação recebida pela equipe.
 
+Antes de implementar, leia o [guia de continuidade](../CONTINUIDADE.md): ordem de leitura,
+mapa do código, decisões e evidências de validação.
+
 ## Decisões confirmadas e propostas
 
 **Confirmado por Ana:** app informativo; preservar identidade visual do Figma Make;
@@ -29,7 +32,7 @@ descrevem os limites; a existência de uma aba provisória não significa que se
 | Pasta / PRD | Entrega disponível | Trabalho restante |
 | --- | --- | --- |
 | [PRD-001 — Consolidação do InfoVida e avaliação de dependências](implementados/PRD-001-consolidacao-infovida.md) — implementados | Levantamento inicial das duas bases e dos PRs de dependências registrado. | As recomendações são históricas; aprovações, merges e atualizações dependem de nova revisão dos heads/checks. |
-| [PRD-002 — Estabilização da base e extração do Figma Make](parcialmente-implementados/PRD-002-estabilizacao-base.md) — parcialmente-implementados | Configuração, dependências diretas, domínio e ajustes de CI preparados. | Lint, TypeScript, 58 testes e exportações Metro passaram na entrega mais recente. Ainda faltam instalação limpa/Doctor e auditoria com rede, CI remoto e smoke Android; não considerar a falha original do E2E resolvida. |
+| [PRD-002 — Estabilização da base e extração do Figma Make](parcialmente-implementados/PRD-002-estabilizacao-base.md) — parcialmente-implementados | Configuração, dependências diretas, domínio e ajustes de CI preparados. | Lint, TypeScript, 58 testes e exportações Metro passaram na entrega mais recente. Instalação limpa passou no CI inicial do PR #8; Doctor apontou patches, alinhados no commit de9ab62. Ainda faltam confirmar os checks após esse ajuste, auditoria com rede e smoke Android; não considerar a falha original do E2E resolvida. |
 | [PRD-003 — Sistema visual, navegação e contratos compartilhados](implementados/PRD-003-sistema-visual.md) — implementados | Tema, componentes e navegação entregues. | Contratos de persistência são interfaces, sem adapters prontos. Permanecem revisão visual, TalkBack, fonte ampliada e integração de histórico nas próximas funcionalidades. |
 | [PRD-004 — Entrada e apresentação](implementados/PRD-004-entrada.md) — implementados | Entrada e acesso às abas entregues. | Revisão visual/acessibilidade em aparelho pendente; autenticação real não integra esta entrega. |
 | [PRD-005 — Início e notícias de demonstração](implementados/PRD-005-inicio.md) — implementados | Feed, filtros, estados e navegação para leitura entregues. | API, fontes editoriais reais e revisão visual/acessibilidade permanecem pendentes; notícias reais não integram esta entrega. |
@@ -38,11 +41,11 @@ descrevem os limites; a existência de uma aba provisória não significa que se
 | [PRD-008 — Quiz: sessão de perguntas](parcialmente-implementados/PRD-008-quiz-perguntas.md) — parcialmente-implementados | Respostas únicas, explicação, avanço e confirmação de saída entregues. | Faltam conteúdo de saúde revisado, persistência e contrato de tentativa real; demonstração fica apenas na memória. |
 | [PRD-009 — Quiz: resultado](parcialmente-implementados/PRD-009-quiz-resultado.md) — parcialmente-implementados | Pontuação derivada, repetição e retorno entregues. | Faltam gravação idempotente de tentativa real, histórico e regras aprovadas de XP/conquistas; a demonstração não gera progresso. |
 | [PRD-010 — Lembretes: lista, ações e exclusão](nao-implementados/PRD-010-lembretes.md) — nao-implementados | A aba possui somente apresentação provisória. | Regras puras de lembretes já foram portadas/testadas, mas lista funcional, ações e persistência ainda precisam ser conectadas. |
-| [PRD-011 — Formulário de criação e edição de lembrete](nao-implementados/PRD-011-lembrete-formulario.md) — nao-implementados | Formulário, rotas de criação/edição, persistência e integração de agendamento ainda precisam ser implementados; validação de domínio já existe.. | Consulte os limites do documento. |
+| [PRD-011 — Formulário de criação e edição de lembrete](nao-implementados/PRD-011-lembrete-formulario.md) — nao-implementados | Formulário, rotas de criação/edição, persistência e integração de agendamento ainda precisam ser implementados; validação de domínio já existe. | Consulte os limites do documento. |
 | [PRD-012 — Emergência e acesso a contatos](nao-implementados/PRD-012-emergencia.md) — nao-implementados | A aba possui somente apresentação provisória. | Contatos, discador e orientações com revisão editorial ainda precisam ser implementados. |
 | [PRD-013 — Perfil, atividade e informações do projeto](nao-implementados/PRD-013-perfil.md) — nao-implementados | Existe apresentação de visitante, sem histórico real conectado. | Estatísticas, edição e informações previstas no PRD continuam pendentes. |
 | [PRD-014 — Recompensas, nível e conquistas](nao-implementados/PRD-014-recompensas.md) — nao-implementados | Tela, catálogo e integração com histórico ainda pendentes. | Regras de XP, nível e conquistas são propostas a confirmar. |
-| [PRD-015 — Central de notificações dentro do app](nao-implementados/PRD-015-notificacoes.md) — nao-implementados | Central interna, armazenamento e integração com notificações ainda pendentes; não há serviço de notificações nativas implementado.. | Consulte os limites do documento. |
+| [PRD-015 — Central de notificações dentro do app](nao-implementados/PRD-015-notificacoes.md) — nao-implementados | Central interna, armazenamento e integração com notificações ainda pendentes; não há serviço de notificações nativas implementado. | Consulte os limites do documento. |
 
 A pasta `implementados/` contém a análise e as entregas 003–006 no escopo atual.
 `parcialmente-implementados/` contém estabilização e quiz (002, 007–009).

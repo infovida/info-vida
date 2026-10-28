@@ -11,10 +11,11 @@ Every functional change needs a test. Use the smallest test level that proves th
 Before opening a pull request, run:
 
 ```bash
+npm run doctor
 npm run validate
 ```
 
-CI runs the same checks and requires at least 70% global coverage. Increase this target over time; do not lower it to merge a change.
+Expo Doctor is a separate compatibility check and may need network access; `validate` does not include it. CI runs both and requires at least 70% global coverage. Increase this target over time; do not lower it to merge a change.
 
 ## Conventions
 
@@ -23,3 +24,7 @@ CI runs the same checks and requires at least 70% global coverage. Increase this
 - Use `testID` only when text, role, or accessibility label cannot identify an element in Maestro.
 - Never commit `.env` files, credentials, signing certificates, or store keys.
 - Keep pull requests small and focused. Explain the behavior change and the tests added.
+
+## Project context
+
+Before implementing, read [the continuity guide](docs/CONTINUIDADE.md) and [the PRD index](docs/prd/README.md). Update the relevant PRD and validation record with the delivered scope and remaining work.

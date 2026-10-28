@@ -32,3 +32,12 @@ O npm também reportou 17 vulnerabilidades (13 baixas e 4 altas); esse aviso nã
 foi a causa do exit code 1. A identificação e correção exigem auditoria dedicada,
 sem atualização forçada indiscriminada. O aviso de depreciação de upload-artifact
 é igualmente separado da falha de compatibilidade observada.
+
+
+## Atualização posterior — alteração verificada no Git local
+
+O commit `de9ab62` (`fix: alinha patches do Expo exigidos pelo CI`) atualizou
+`package.json` e `package-lock.json` para os patches apontados na tabela.
+Esta atualização registra a correção no código, sem afirmar que o CI foi
+reexecutado com sucesso. Conferir checks e logs do head atual antes de mesclar.
+O diagnóstico acima permanece como evidência da execução do commit anterior.
