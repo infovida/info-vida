@@ -147,6 +147,9 @@ dos esperados. O commit local `de9ab62` alinha `expo ~58.0.20`,
 `expo-dev-client ~58.0.16` e `expo-router ~58.0.27`, com lockfile atualizado.
 Ver [diagnóstico histórico](validation/PR-008-ci-diagnostico.md).
 Isso prova a alteração no Git, não o resultado de um novo CI; verificar novamente.
+A consulta posterior do head `9d449323` confirmou CI aprovado e APK compilado;
+o E2E falhou na criação do AVD antes do Maestro. O ajuste de ferramentas/perfil
+e seus limites estão no [registro do emulador](validation/PR-008-e2e-emulador.md).
 Não rebaixar versões, excluir pacotes do Doctor nem pular checks para dar verde.
 Majors de ESLint/TypeScript exigem migração própria; React/react-dom precisam
 ser avaliados em conjunto com Expo/RN. Mudar `package.json` e lockfile juntos.

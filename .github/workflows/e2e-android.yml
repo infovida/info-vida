@@ -23,6 +23,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Set up Android SDK tools
+        uses: android-actions/setup-android@v4
+        with:
+          cmdline-tools-version: 15859902
       - name: Build Android test binary
         run: npx expo prebuild --platform android --no-install && cd android && ./gradlew assembleRelease
       - name: Install Maestro
@@ -33,11 +37,18 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
+      - name: Record Android SDK diagnostics
+        run: |
+          mkdir -p artifacts/maestro
+          command -v sdkmanager avdmanager > artifacts/maestro/sdk-tools.txt
+          sdkmanager --version >> artifacts/maestro/sdk-tools.txt 2>&1
+          avdmanager list device > artifacts/maestro/device-profiles.txt 2>&1
       - name: Start emulator and run flows
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 35
           arch: x86_64
+          profile: pixel_2
           disable-linux-hw-accel: false
           script: |
             mkdir -p artifacts/maestro
