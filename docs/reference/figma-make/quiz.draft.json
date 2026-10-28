@@ -1,0 +1,272 @@
+[
+  {
+    "id": "vacinacao",
+    "label": "Vacinação",
+    "emoji": "💉",
+    "color": "#1565C0",
+    "gradient": "from-[#1565C0] to-[#42A5F5]",
+    "questions": [
+      {
+        "question": "Qual a importância da vacinação para a comunidade?",
+        "options": [
+          "Apenas protege quem se vacina",
+          "Cria imunidade coletiva e protege todos",
+          "Não tem importância",
+          "Só é útil para crianças"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A vacinação cria imunidade coletiva, protegendo toda a comunidade, especialmente os grupos vulneráveis que não podem se vacinar.",
+        "emoji": "💉"
+      },
+      {
+        "question": "Com que frequência adultos devem tomar a vacina da gripe?",
+        "options": [
+          "A cada 5 anos",
+          "Uma vez na vida",
+          "Todo ano",
+          "A cada 2 anos"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A vacina contra gripe deve ser tomada todo ano pois o vírus influenza sofre mutações constantes e a proteção diminui com o tempo.",
+        "emoji": "🩺"
+      },
+      {
+        "question": "Qual vacina protege contra o vírus do papiloma humano (HPV)?",
+        "options": [
+          "BCG",
+          "Vacina HPV",
+          "Hepatite B",
+          "Febre Amarela"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A vacina HPV é indicada para adolescentes e previne infecções pelo vírus que podem causar cânceres e outras doenças.",
+        "emoji": "🛡️"
+      }
+    ]
+  },
+  {
+    "id": "nutricao",
+    "label": "Nutrição",
+    "emoji": "🥗",
+    "color": "#2E7D32",
+    "gradient": "from-[#2E7D32] to-[#66BB6A]",
+    "questions": [
+      {
+        "question": "Quantos litros de água devemos beber por dia?",
+        "options": [
+          "1 litro",
+          "2 litros",
+          "3 litros",
+          "4 litros"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O recomendado é beber pelo menos 2 litros de água por dia para manter o corpo hidratado e saudável.",
+        "emoji": "💧"
+      },
+      {
+        "question": "Qual nutriente é a principal fonte de energia do corpo?",
+        "options": [
+          "Proteínas",
+          "Gorduras",
+          "Carboidratos",
+          "Vitaminas"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Os carboidratos são a principal e mais eficiente fonte de energia para o organismo, especialmente para o cérebro.",
+        "emoji": "⚡"
+      },
+      {
+        "question": "Qual vitamina é produzida pelo corpo com a exposição solar?",
+        "options": [
+          "Vitamina A",
+          "Vitamina C",
+          "Vitamina D",
+          "Vitamina B12"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A vitamina D é sintetizada pela pele ao ser exposta à luz solar e é essencial para a saúde dos ossos e do sistema imune.",
+        "emoji": "☀️"
+      }
+    ]
+  },
+  {
+    "id": "saude-mental",
+    "label": "Saúde Mental",
+    "emoji": "🧠",
+    "color": "#6A1B9A",
+    "gradient": "from-[#6A1B9A] to-[#AB47BC]",
+    "questions": [
+      {
+        "question": "Quantas horas de sono são recomendadas para adultos?",
+        "options": [
+          "4-5 horas",
+          "6-7 horas",
+          "7-9 horas",
+          "10-12 horas"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Adultos devem dormir entre 7 e 9 horas por noite para garantir recuperação física e mental adequada.",
+        "emoji": "😴"
+      },
+      {
+        "question": "Qual é um sinal comum de ansiedade?",
+        "options": [
+          "Excesso de energia",
+          "Preocupação excessiva e constante",
+          "Muito apetite",
+          "Sonolência excessiva"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A preocupação excessiva e persistente é um dos principais sintomas da ansiedade, que pode impactar a qualidade de vida.",
+        "emoji": "🌀"
+      },
+      {
+        "question": "Qual atividade ajuda a reduzir o estresse e a ansiedade?",
+        "options": [
+          "Ficar nas redes sociais por horas",
+          "Praticar exercício físico regularmente",
+          "Comer em excesso",
+          "Dormir muito durante o dia"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O exercício físico libera endorfinas, substâncias que promovem bem-estar e ajudam a reduzir o estresse e a ansiedade.",
+        "emoji": "🏃"
+      }
+    ]
+  },
+  {
+    "id": "prevencao",
+    "label": "Prevenção",
+    "emoji": "🛡️",
+    "color": "#E65100",
+    "gradient": "from-[#E65100] to-[#FFA726]",
+    "questions": [
+      {
+        "question": "Qual a melhor forma de prevenir a dengue?",
+        "options": [
+          "Tomar antibióticos",
+          "Eliminar água parada",
+          "Usar repelente apenas à noite",
+          "Fechar janelas"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Eliminar água parada é a forma mais eficaz de combater o mosquito Aedes aegypti, transmissor da dengue.",
+        "emoji": "🦟"
+      },
+      {
+        "question": "Com que frequência devemos lavar as mãos?",
+        "options": [
+          "Só antes das refeições",
+          "Só após usar o banheiro",
+          "Regularmente, antes de comer e após o banheiro",
+          "Uma vez ao dia"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Lavar as mãos com frequência é uma das medidas mais eficazes para prevenir doenças infecciosas e gastrintestinais.",
+        "emoji": "🙌"
+      },
+      {
+        "question": "Qual exame detecta câncer de mama precocemente?",
+        "options": [
+          "Ultrassom abdominal",
+          "Mamografia",
+          "Raio-X de tórax",
+          "Colonoscopia"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A mamografia é o exame padrão para rastreamento do câncer de mama, recomendado anualmente a partir dos 40 anos.",
+        "emoji": "🎗️"
+      }
+    ]
+  },
+  {
+    "id": "exercicios",
+    "label": "Exercícios",
+    "emoji": "💪",
+    "color": "#1565C0",
+    "gradient": "from-[#0277BD] to-[#26C6DA]",
+    "questions": [
+      {
+        "question": "Quantos minutos de exercício moderado são recomendados por semana?",
+        "options": [
+          "60 minutos",
+          "100 minutos",
+          "150 minutos",
+          "300 minutos"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A OMS recomenda pelo menos 150 minutos de atividade física moderada por semana para adultos saudáveis.",
+        "emoji": "⏱️"
+      },
+      {
+        "question": "Qual tipo de exercício fortalece os ossos?",
+        "options": [
+          "Natação",
+          "Ciclismo aquático",
+          "Musculação e caminhada",
+          "Alongamento"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Exercícios com impacto e resistência, como musculação e caminhada, estimulam a formação óssea e previnem a osteoporose.",
+        "emoji": "🦴"
+      },
+      {
+        "question": "Quando devemos nos hidratar durante o exercício?",
+        "options": [
+          "Só depois de terminar",
+          "Apenas quando sentir sede",
+          "Antes, durante e após o exercício",
+          "Nunca durante o exercício"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A hidratação deve ocorrer antes, durante e após o exercício para manter o desempenho e prevenir câimbras e desidratação.",
+        "emoji": "🚰"
+      }
+    ]
+  },
+  {
+    "id": "primeiros-socorros",
+    "label": "Primeiros Socorros",
+    "emoji": "🚑",
+    "color": "#B71C1C",
+    "gradient": "from-[#B71C1C] to-[#EF5350]",
+    "questions": [
+      {
+        "question": "O que fazer primeiro ao encontrar uma pessoa desmaiada?",
+        "options": [
+          "Dar água",
+          "Chamar pelo nome e verificar se responde",
+          "Mover a pessoa imediatamente",
+          "Dar um tapa no rosto"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Chamar pelo nome e verificar a resposta é o primeiro passo para avaliar o nível de consciência antes de qualquer outra ação.",
+        "emoji": "😵"
+      },
+      {
+        "question": "Qual o número do SAMU no Brasil?",
+        "options": [
+          "190",
+          "192",
+          "193",
+          "197"
+        ],
+        "correctAnswer": 1,
+        "explanation": "O SAMU (Serviço de Atendimento Móvel de Urgência) funciona pelo número 192 e atende emergências médicas 24 horas por dia.",
+        "emoji": "🚨"
+      },
+      {
+        "question": "Como realizar a reanimação cardiopulmonar (RCP) em adultos inconscientes?",
+        "options": [
+          "Levemente, com uma mão",
+          "Com as duas mãos no centro do peito, firme e rápido",
+          "No lado esquerdo do peito",
+          "Apenas se a pessoa estiver acordada"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A compressão deve ser feita com as duas mãos sobrepostas no centro do peito, com profundidade de 5-6 cm, a 100-120 compressões por minuto. Chame o SAMU (192) imediatamente.",
+        "emoji": "❤️"
+      }
+    ]
+  }
+]

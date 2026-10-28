@@ -32,3 +32,11 @@ coverage/
 
 expo-env.d.ts
 # @end expo-cli
+# E2E diagnostics
+artifacts/
+
+# Local Python asset-generation cache
+__pycache__/
+
+# Protótipo de referência: manter fora do repositório
+/InfoVida_FigmaMake/

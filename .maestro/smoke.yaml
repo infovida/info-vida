@@ -1,5 +1,30 @@
 appId: com.example.infovida
 ---
+- stopApp
 - launchApp
 - assertVisible: "InfoVida"
-- assertVisible: "Your Expo development environment is ready."
+- assertVisible: "Sua saúde, nossa prioridade"
+- tapOn: "Começar"
+- assertVisible: "Demonstração — notícias fictícias"
+- scrollUntilVisible:
+    element:
+      text: "Ler artigo: Exemplo: encontro de educação em saúde"
+    direction: DOWN
+- tapOn: "Ler artigo: Exemplo: encontro de educação em saúde"
+- assertVisible: "Conteúdo fictício para demonstração"
+- back
+- assertVisible: "Ler artigo: Exemplo: encontro de educação em saúde"
+- tapOn: "Quiz"
+- assertVisible: "Quiz InfoVida"
+- tapOn: "Quiz de Vacinação"
+- assertVisible: "Questão 1 de 3"
+- tapOn: "Sair do quiz"
+- assertVisible: "Quiz InfoVida"
+- tapOn: "Lembretes"
+- assertVisible: "Seus lembretes, em um só lugar"
+- tapOn: "Emergência"
+- assertVisible: "Contatos e orientações"
+- tapOn: "Perfil"
+- assertVisible: "Bem-vindo, visitante"
+- tapOn: "Início"
+- assertVisible: "InfoVida"

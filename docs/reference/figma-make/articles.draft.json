@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "category": "Vacinação",
+    "title": "Campanha Nacional de Vacinação contra Gripe começa segunda-feira",
+    "description": "O Ministério da Saúde inicia nova campanha de imunização em todo o país, com foco em grupos prioritários como idosos, crianças e gestantes.",
+    "image": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800",
+    "source": "Ministério da Saúde",
+    "time": "2h atrás",
+    "body": "A Campanha Nacional de Vacinação contra a Influenza começa na próxima segunda-feira e vai até o final do mês em todo o território nacional. A ação tem como objetivo imunizar pelo menos 90% dos grupos prioritários.\n\nOs grupos prioritários incluem crianças de 6 meses a menores de 6 anos, gestantes, puérperas, trabalhadores da saúde, idosos com 60 anos ou mais, professores, pessoas com comorbidades e povos indígenas.\n\nA vacina está disponível gratuitamente em todas as unidades básicas de saúde do país. Não é necessário agendamento prévio — basta comparecer com documento de identidade e cartão de vacinação.\n\nEspecialistas reforçam que a imunização é a forma mais eficaz de prevenção contra a gripe e suas complicações. A doença pode evoluir para casos graves, especialmente em pessoas com o sistema imunológico comprometido.\n\n\"Proteja-se e proteja quem você ama. A vacina é segura, eficaz e gratuita\", destacou o Ministro da Saúde."
+  },
+  {
+    "id": 2,
+    "category": "Saúde do Coração",
+    "title": "7 hábitos simples que protegem seu coração todos os dias",
+    "description": "Pequenas mudanças na rotina podem reduzir significativamente o risco de doenças cardiovasculares, principal causa de morte no Brasil.",
+    "source": "InfoVida Educação",
+    "time": "5h atrás",
+    "body": "As doenças cardiovasculares são responsáveis por cerca de 400 mil mortes por ano no Brasil, segundo dados do Ministério da Saúde. A boa notícia é que a maioria dos fatores de risco pode ser controlada com mudanças de hábito.\n\nHidratação adequada é o primeiro passo. Beber pelo menos 2 litros de água por dia melhora a circulação sanguínea e ajuda o coração a bombear o sangue com mais eficiência.\n\nA prática de exercícios físicos regulares — pelo menos 150 minutos por semana de atividade moderada — reduz em até 35% o risco de infarto. Caminhadas, ciclismo e natação são ótimas opções.\n\nUma alimentação rica em frutas, verduras, legumes e grãos integrais, com baixo consumo de sódio e gorduras saturadas, contribui para manter o coração saudável ao longo dos anos.\n\nControlar o estresse, dormir bem, não fumar e moderar o consumo de álcool completam os pilares de um estilo de vida cardioprotetor."
+  },
+  {
+    "id": 3,
+    "category": "Diabetes",
+    "title": "Como identificar os primeiros sinais de diabetes tipo 2",
+    "description": "Sede excessiva, cansaço frequente e visão embaçada podem indicar a doença. Diagnóstico precoce é essencial para evitar complicações graves.",
+    "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
+    "source": "InfoVida Educação",
+    "time": "8h atrás",
+    "body": "O diabetes tipo 2 afeta mais de 16 milhões de brasileiros e, em muitos casos, permanece sem diagnóstico por anos. Reconhecer os sintomas precocemente pode fazer toda a diferença no tratamento e na qualidade de vida.\n\nOs sinais mais comuns incluem sede excessiva e vontade frequente de urinar, cansaço sem explicação aparente, visão turva ou embaçada, feridas que demoram a cicatrizar e formigamento nas mãos e nos pés.\n\nA doença se desenvolve quando o organismo não consegue utilizar a insulina de forma eficiente, levando ao acúmulo de glicose no sangue. Os principais fatores de risco são sobrepeso, sedentarismo, histórico familiar e idade acima de 45 anos.\n\nO diagnóstico é feito por meio de exames de sangue simples, como a glicemia em jejum e a hemoglobina glicada. Qualquer pessoa pode solicitar a avaliação em uma unidade básica de saúde.\n\nCom tratamento adequado, incluindo alimentação balanceada, atividade física e, quando necessário, medicação, é possível controlar a doença e viver com qualidade."
+  },
+  {
+    "id": 4,
+    "category": "Prevenção",
+    "title": "Brasil avança no combate à dengue com novas estratégias de prevenção",
+    "description": "Governo e municípios lançam ações integradas para reduzir focos do mosquito Aedes aegypti. Moradores podem ajudar eliminando água parada.",
+    "image": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800",
+    "source": "Saúde Brasil",
+    "time": "12h atrás",
+    "body": "O Brasil registra uma das maiores mobilizações contra a dengue dos últimos anos. Secretarias de saúde municipais e o Ministério da Saúde lançaram um pacote de ações integradas para reduzir os focos do mosquito Aedes aegypti e diminuir o número de casos da doença.\n\nEntre as novas estratégias estão o uso de drones para identificar possíveis criadouros em áreas de difícil acesso, a ampliação das equipes de agentes de endemias e campanhas de comunicação em massa nas regiões mais afetadas.\n\nA principal forma de prevenção continua sendo a eliminação de água parada, que serve de criadouro para o mosquito. Pneus, vasos de plantas, calhas e qualquer recipiente que acumule água devem ser verificados regularmente.\n\nOs sintomas da dengue incluem febre alta, dor de cabeça intensa, dores no corpo e manchas vermelhas na pele. Ao identificar qualquer sinal, o recomendado é buscar atendimento médico e evitar o uso de aspirina ou anti-inflamatórios sem prescrição.\n\n\"A luta contra a dengue é de todos. Cada cidadão que elimina um foco na sua casa contribui para a saúde de toda a comunidade\", afirmou o secretário de Vigilância em Saúde."
+  },
+  {
+    "id": 5,
+    "category": "Saúde Mental",
+    "title": "Ansiedade entre jovens brasileiros atinge níveis recordes pós-pandemia",
+    "description": "Pesquisa aponta que 1 em cada 3 jovens entre 18 e 29 anos apresenta sintomas de ansiedade. Especialistas alertam para a importância do suporte psicológico.",
+    "image": "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?w=800",
+    "source": "ABPSM",
+    "time": "1d atrás",
+    "body": "Um estudo inédito da Associação Brasileira de Psiquiatria revela que os índices de ansiedade entre jovens adultos atingiram os maiores níveis da última década. A pesquisa, realizada com mais de 10 mil pessoas entre 18 e 29 anos, mostrou que 34% apresentam sintomas clinicamente significativos.\n\nOs fatores associados ao aumento incluem insegurança econômica, sobrecarga de informações nas redes sociais, dificuldades no mercado de trabalho e os efeitos duradouros do isolamento social durante a pandemia de COVID-19.\n\nEspecialistas destacam que a ansiedade, quando não tratada, pode evoluir para depressão e outros transtornos mentais. Reconhecer os sintomas — como preocupação excessiva, dificuldade de concentração, tensão muscular e insônia — é o primeiro passo.\n\nO acesso ao apoio psicológico melhorou nos últimos anos com a expansão dos Centros de Atenção Psicossocial (CAPS) e a oferta de atendimento online pelo SUS. Falar sobre saúde mental ainda é um tabu para muitos, mas buscar ajuda é um ato de coragem.\n\n\"Cuidar da mente é tão importante quanto cuidar do corpo. Não espere a situação piorar para pedir ajuda\", reforça a psicóloga Dra. Ana Paula Ferreira."
+  },
+  {
+    "id": 6,
+    "category": "Fake News",
+    "title": "5 sinais que identificam uma fake news de saúde antes de compartilhar",
+    "description": "Informações falsas sobre saúde circulam rapidamente nas redes sociais e podem colocar vidas em risco. Aprenda a identificá-las com orientações do Ministério da Saúde.",
+    "image": "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800",
+    "source": "Ministério da Saúde",
+    "time": "3h atrás",
+    "body": "O Ministério da Saúde alerta: a desinformação em saúde é um problema grave de saúde pública. Durante a pandemia de COVID-19, a OMS cunhou o termo \"infodemia\" para descrever a onda massiva de informações falsas que circularam ao mesmo tempo que o vírus.\n\nCOMO IDENTIFICAR UMA FAKE NEWS DE SAÚDE\n\n1. Verifique a fonte. Informações confiáveis vêm de órgãos oficiais como o Ministério da Saúde, ANVISA, OMS, OPAS e sociedades médicas reconhecidas. Desconfie de sites desconhecidos, perfis sem identificação e mensagens de WhatsApp sem origem clara.\n\n2. Procure pela data. Notícias antigas frequentemente ressurgem fora de contexto. Verifique se a informação é atual e se o contexto original ainda se aplica.\n\n3. Cuidado com manchetes sensacionalistas. Títulos com \"URGENTE\", \"PROIBIDO PELA MÍDIA\", \"O QUE MÉDICOS NÃO QUEREM QUE VOCÊ SAIBA\" são sinais de alerta. Notícias sérias usam linguagem objetiva.\n\n4. Desconfie de curas milagrosas. Nenhum alimento, chá, cristal ou remédio caseiro cura doenças complexas como câncer, diabetes ou HIV. O tratamento dessas condições é sempre acompanhado por profissionais de saúde.\n\n5. Use ferramentas de verificação. Plataformas como Agência Lupa, Aos Fatos e o próprio portal do Ministério da Saúde (saude.gov.br) oferecem checagem de informações sobre saúde.\n\nANTES DE COMPARTILHAR: Leia além do título. Confirme em pelo menos duas fontes oficiais. Se tiver dúvida, não repasse."
+  },
+  {
+    "id": 7,
+    "category": "Fake News",
+    "title": "Ministério da Saúde lança canal oficial de combate à desinformação digital",
+    "description": "Novo serviço permite que cidadãos denunciem e verifiquem informações falsas sobre saúde diretamente pelo aplicativo Conecte SUS.",
+    "source": "Ministério da Saúde",
+    "time": "1d atrás",
+    "body": "O Ministério da Saúde lançou um canal dedicado ao combate à desinformação em saúde integrado ao aplicativo Conecte SUS. A iniciativa faz parte da Estratégia Nacional de Saúde Digital (ENSD) e representa um passo importante na proteção da população contra notícias falsas.\n\nPOR QUE A DESINFORMAÇÃO EM SAÚDE É PERIGOSA?\n\nFake news sobre saúde já causaram danos concretos no Brasil: queda nas taxas de vacinação infantil devido a boatos sobre autismo; uso de medicamentos sem eficácia comprovada durante surtos de doenças; atraso no diagnóstico de condições graves por acreditar em \"tratamentos alternativos\" divulgados nas redes; e automedicação perigosa baseada em informações não verificadas.\n\nCOMO USAR O CANAL OFICIAL\n\nPelo aplicativo Conecte SUS, disponível gratuitamente para Android e iOS, é possível: verificar se uma informação sobre saúde é verdadeira ou falsa; denunciar conteúdos enganosos circulando nas redes sociais; acessar orientações de saúde validadas por especialistas do SUS; e receber alertas sobre desinformações ativas sobre doenças emergentes.\n\nO canal conta com equipe multidisciplinar de médicos, epidemiologistas e comunicadores que respondem às verificações em até 48 horas.\n\n\"Cada compartilhamento irresponsável pode custar uma vida. Nossa missão é garantir que a população tenha acesso à informação correta no momento certo\", afirmou a Secretária de Informação e Saúde Digital."
+  },
+  {
+    "id": 8,
+    "category": "Fake News",
+    "title": "Vacinas causam autismo? A ciência responde de forma definitiva",
+    "description": "Um dos mitos mais perigosos da saúde pública volta a circular nas redes. Entenda por que essa afirmação é falsa e quais são os riscos da desinformação sobre imunização.",
+    "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800",
+    "source": "Agência Lupa / ANVISA",
+    "time": "2d atrás",
+    "body": "O mito de que vacinas causam autismo é possivelmente a fake news de saúde mais perigosa e persistente dos últimos 25 anos. Ela surgiu em 1998 a partir de um artigo fraudulento publicado na revista The Lancet pelo médico Andrew Wakefield — que teve sua licença médica cassada e o artigo completamente retirado da publicação por fraude científica.\n\nO QUE DIZ A CIÊNCIA\n\nMais de 25 estudos científicos independentes, envolvendo milhões de crianças em dezenas de países, investigaram a suposta relação entre vacinas e autismo. Todos chegaram à mesma conclusão: não há nenhuma associação.\n\nA ANVISA, o CDC americano, a OMS e todas as principais organizações médicas do mundo afirmam categoricamente que as vacinas são seguras e não causam autismo. O transtorno do espectro autista (TEA) tem origem genética e neurológica, com características que se manifestam nos primeiros anos de vida — coincidindo com o calendário vacinal, mas sem qualquer relação de causa e efeito.\n\nO IMPACTO REAL DA DESINFORMAÇÃO\n\nDesde que esse boato começou a circular, o Brasil registrou o retorno do sarampo — doença eliminada em 2016 — e queda nas coberturas vacinais abaixo do mínimo necessário para a imunidade coletiva. A desinformação não é apenas um problema de comunicação: é um risco real à saúde pública.\n\nSe você vir essa informação circulando, compartilhe os fatos. Sua atitude pode proteger uma criança."
+  }
+]
