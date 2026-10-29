@@ -1,101 +1,172 @@
 # InfoVida
 
-A starter project for React Native with **Expo SDK 58**, TypeScript, Expo Router, automated tests, and GitHub Actions CI/CD.
+Aplicativo informativo em **React Native, Expo SDK 58, TypeScript e Expo Router**.
+A base da equipe foi preservada e a identidade visual do Figma Make está sendo
+adaptada para o aplicativo nativo, com implementação por PRDs.
 
-## Requirements
+**Vai continuar a implementação?** Comece pelo
+[guia de continuidade](docs/CONTINUIDADE.md), pelo
+[índice de PRDs](docs/prd/README.md) e por [CONTRIBUTING.md](CONTRIBUTING.md).
+As orientações para agentes estão em [AGENTS.md](AGENTS.md).
 
-- Node.js 22.13 or newer.
-- An Expo account for cloud builds.
+## O que já pode ser testado
 
-## Get started
-
-Run these commands once after cloning the repository:
-
-```bash
-cp .env.example .env
-npm install
-npx expo install --fix
-npm run validate
-npm start
-```
-
-`npm install` downloads packages and creates `package-lock.json`. Commit that file. After it exists, use `npm ci` for clean, repeatable installs locally and in CI.
-
-`npx expo install --fix` checks that every Expo package matches the installed SDK version. Run it after adding an Expo package or upgrading Expo.
-
-`npm start` opens the Expo development server. From its terminal screen, press `a` for Android, `i` for iOS on macOS, or `w` for web.
-
-## Main commands
-
-| Command | What it does |
+| Área | Estado atual |
 | --- | --- |
-| `npm start` | Starts the Expo development server. |
-| `npm run android` | Starts Expo and opens Android. |
-| `npm run ios` | Starts Expo and opens iOS (macOS only). |
-| `npm run web` | Starts the web version. |
-| `npm run lint` | Finds code style problems and common mistakes. |
-| `npm run typecheck` | Checks TypeScript without generating files. |
-| `npm test` | Runs unit and component tests once. |
-| `npm run test:watch` | Runs tests again when files change. |
-| `npm run test:coverage` | Runs tests and creates a coverage report. |
-| `npm run test:e2e:android` | Runs Maestro Android user flows on an installed app. |
-| `npm run validate` | Runs lint, type checks, and coverage tests; this matches the main CI checks. |
+| Entrada e navegação | Acesso como visitante, identidade visual compartilhada e cinco abas |
+| Notícias | Seis exemplos fictícios, filtros e leitura dos artigos; sem API |
+| Quiz | Seis categorias, três perguntas demo por categoria, aleatório com até cinco, explicações e resultado |
+| Lembretes | Aba provisória; regras de domínio já portadas e testadas |
+| Emergência e Perfil | Apresentações provisórias, sem os fluxos completos |
+| Recompensas e notificações | Especificadas em PRDs, ainda sem telas funcionais |
 
-## Testing strategy
+O quiz usa exemplos sobre uso do app e leitura de informações; suas sessões ficam
+somente em memória e são perdidas ao reiniciar. Não há XP, conquistas, sequência
+ou tentativas persistidas. Notícias fictícias também não geram progresso.
+Persistência, notificações nativas, autenticação e backend ainda não estão integrados.
 
-- Use **Jest** for pure functions and small business rules.
-- Use **React Native Testing Library** for components, screen states, and accessibility.
-- Use **Maestro** for complete user journeys, navigation, permissions, and native integrations.
+## Instalar e testar a branch baixada
 
-The first Maestro flow is [`.maestro/smoke.yaml`](.maestro/smoke.yaml). Install the app on an Android emulator or device, then run:
+Execute na pasta que contém `package.json`. Use Node compatível com os `engines`
+do [package.json](package.json); [.nvmrc](.nvmrc) registra a referência da equipe
+(22.13.0). Com nvm disponível, `nvm install` e `nvm use` selecionam essa versão.
 
 ```bash
-maestro test .maestro/smoke.yaml
+npm ci
 ```
 
-Add a test whenever a feature changes. Choose the smallest test level that proves the behavior, then add a Maestro flow when the feature affects a real user journey.
+Não é necessário configurar API, copiar `.env` ou criar conta Expo para testar a
+demonstração. [.env.example](.env.example) é apenas uma referência para integração
+futura; seu endereço não é um serviço ativo do aplicativo.
 
-## Build and release
-
-This project uses EAS Build. First, log in and link the project:
+### No navegador
 
 ```bash
-npx eas-cli@latest login
-npx eas-cli@latest build:configure
+npm run web
 ```
 
-Before the first distribution build, replace `com.example.infovida` in `app.json` with unique Android and iOS application identifiers.
+Abra o endereço mostrado no terminal se o navegador não abrir automaticamente.
 
-Build from your terminal:
+### No celular com Expo Go
+
+Instale o **Expo Go**, conecte celular e computador à mesma rede Wi-Fi e execute:
 
 ```bash
-# Development build for emulator or device testing
-npx eas-cli@latest build --platform android --profile development
-
-# Internal Android or iOS build to share with testers
-npx eas-cli@latest build --platform all --profile preview
-
-# Store-ready build; it does not submit to stores automatically
-npx eas-cli@latest build --platform all --profile production
+npx expo start --go
 ```
 
-The same profiles are defined in `eas.json`: `development`, `preview`, and `production`. Production builds automatically increment the remote build number.
+No Android, escaneie o QR code pelo Expo Go; no iPhone, use a câmera para abrir o
+link no Expo Go. Toque em **Começar**, navegue pelo Início, abra um artigo e teste
+as categorias do Quiz. As abas provisórias informam que estão em preparação.
 
-## GitHub Actions
+Se a sessão/cache anterior estiver interferindo:
 
-- **CI** runs on every pull request to `main` and every push to `main`. It runs Expo Doctor, lint, TypeScript, and tests with coverage.
-- **E2E Android** runs on every pull request to `main`. It builds the Android app, starts an emulator, and runs Maestro flows.
-- **Build EAS** is manual from the GitHub Actions page. It validates the project before requesting an Android and/or iOS EAS build. It never submits an app to a store.
-- **Dependabot** opens weekly dependency update pull requests.
+```bash
+npx expo start --go --clear
+```
 
-To allow GitHub to request EAS builds, create an Expo access token and save it as the `EXPO_TOKEN` repository secret at **Settings → Secrets and variables → Actions**.
+O Fast Refresh pode preservar a rota atual; feche a sessão do Expo Go e reabra pelo
+QR code para conferir novamente a entrada. Testar na web não substitui conferir
+safe area, teclado, navegação e acessibilidade no Android.
 
-Protect `main` in **Settings → Branches**. Require the **Quality, types, and tests** and **E2E Android** checks, require pull requests, and disable direct pushes.
+## Onde fica cada parte
 
-## Contributing
+| Caminho | Responsabilidade |
+| --- | --- |
+| `app/` | Rotas Expo Router e layouts; manter composição enxuta |
+| `src/features/` | Telas e fluxos de entrada, notícias, quiz e áreas provisórias |
+| `src/components/`, `src/theme/`, `src/navigation/` | Componentes, tokens e navegação compartilhados |
+| `src/domain/` | Regras puras de lembretes, quiz, sessão e atividade |
+| `src/services/contracts.ts` | Contratos de repositórios; não equivalem a adapters implementados |
+| `src/hooks/` | Recursos compartilhados de estado/carregamento |
+| `assets/`, `scripts/` | Imagens/ícones locais, licenças e geração opcional de assets |
+| `tests/`, `.maestro/` | Testes de domínio/componentes e jornadas Android |
+| `docs/` | Continuidade, PRDs, referências e registros de validação |
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. In short: add or update tests, run `npm run validate`, update Maestro flows when user journeys change, and never commit secrets.
+## PRDs e sequência de trabalho
 
-## References
+O [índice de PRDs](docs/prd/README.md) separa os documentos em:
 
-The test setup follows the official [Expo testing guide](https://docs.expo.dev/develop/unit-testing/). The routing structure uses [Expo Router](https://docs.expo.dev/router/introduction/), and cloud builds use [EAS](https://docs.expo.dev/eas/).
+- **Implementados:** análise inicial e entregas 003–006, no escopo descrito.
+- **Parcialmente implementados:** estabilização (002) e quiz demo (007–009).
+- **Não implementados:** fluxos 010–015, mesmo quando já há domínio ou aba provisória.
+
+Cada PRD registra o que existe, critérios de aceite e pendências. “Implementado”
+não significa produto completo ou aprovação visual final. Persistência de
+progresso, catálogo de saúde revisado e API continuam como trabalhos futuros.
+
+A próxima área planejada é Lembretes, com
+[PRD-010](docs/prd/nao-implementados/PRD-010-lembretes.md) e
+[PRD-011](docs/prd/nao-implementados/PRD-011-lembrete-formulario.md) lidos juntos.
+O pedido atual da equipe define a prioridade; o guia de continuidade orienta
+como retomar também quiz, notícias e os demais fluxos.
+
+## Validação e checks
+
+```bash
+npm run doctor
+npm run validate
+```
+
+**São comandos diferentes:** Doctor verifica compatibilidade Expo e pode precisar
+de rede; `validate` executa lint, TypeScript e testes com cobertura mínima global
+de 70%. O CI exige ambos. Use `npm ci` para instalar o lockfile; ao mudar pacotes,
+atualize `package.json` e `package-lock.json` juntos. Consulte
+`npx expo install --check` antes de ajustar dependências do Expo e revise o diff.
+
+| Comando | Finalidade |
+| --- | --- |
+| `npm test` | Jest, domínio e componentes |
+| `npm run test:watch` | Testes durante desenvolvimento |
+| `npm run test:coverage` | Testes com relatório de cobertura |
+| `npm run lint` | ESLint sem avisos |
+| `npm run typecheck` | TypeScript sem emissão |
+| `npm run test:e2e:android` | Maestro; exige app instalado e aparelho/emulador configurado |
+
+Os testes ficam em `tests/`, nunca em `app/`. Use Jest para regras puras, React
+Native Testing Library para comportamento de telas e Maestro para jornadas
+nativas. [.maestro/smoke.yaml](.maestro/smoke.yaml) depende de um app instalado com
+o identificador configurado; não é um teste executado dentro do Expo Go.
+
+Registros das entregas:
+
+- [Fundação visual](docs/validation/PRD-003-validacao.md) e [entrada](docs/validation/PRD-004-validacao.md).
+- [Notícias e artigos fictícios](docs/validation/PRD-005-006-validacao.md).
+- [Quiz de demonstração](docs/validation/PRD-007-009-demo-validacao.md).
+- [Diagnóstico do CI do PR #8](docs/validation/PR-008-ci-diagnostico.md).
+
+A entrega demo documentou 58 testes e exportações Android/web aprovados. Depois,
+o CI apontou patches Expo abaixo dos esperados; o commit `de9ab62` atualizou os
+três pacotes e o lockfile. Isso não confirma o resultado de um novo CI: conferir
+os checks do commit atual. Registros antigos são evidências datadas, não status
+remoto em tempo real. Exportação Metro não equivale a APK ou E2E, e a revisão
+visual/TalkBack/fonte ampliada em aparelho permanece pendente de comprovação.
+
+## GitHub Actions e builds
+
+- [CI](.github/workflows/ci.yml): em PRs para `main` e pushes em `main`, instala o
+  lockfile e executa Doctor, lint, TypeScript e testes com cobertura.
+- [E2E Android](.github/workflows/e2e-android.yml): compila o app, inicia emulador e
+  executa Maestro; gera diagnósticos quando disponíveis.
+- [Build EAS](.github/workflows/build.yml): workflow manual de build; depende de
+  configuração Expo/EAS e do secret `EXPO_TOKEN`. Não publica nas lojas.
+- [Dependabot](.github/dependabot.yml): atualizações semanais, React/react-dom
+  agrupados e majors de ESLint/TypeScript adiados para migrações próprias.
+
+[eas.json](eas.json) mantém os perfis `development`, `preview` e `production`.
+A demonstração local não requer EAS. Para distribuição, ainda é preciso vincular
+o projeto à conta Expo, configurar credenciais e substituir `com.example.infovida`
+por identificadores definitivos; ao mudar o ID, alinhar também o fluxo Maestro.
+Builds de distribuição, commits, push, PRs e publicações dependem de autorização.
+
+## Referência Figma Make e organização Git
+
+A raiz Git é esta pasta `InfoVida`, mesmo quando estiver dentro de outra pasta no
+computador. Não é necessário mover o clone nem enviar sua pasta pai. No GitHub,
+`app/`, `src/` e `docs/` aparecem diretamente na raiz do repositório.
+
+A exportação completa `../InfoVida_FigmaMake/` fica como referência local fora
+deste Git. O app instala, roda e testa sem ela. Assets utilizados, licenças e
+rascunhos extraídos em [docs/reference/figma-make/](docs/reference/figma-make/README.md)
+acompanham o projeto. Rascunhos de notícias/perguntas não são conteúdo editorial
+aprovado. Não copiar dependências HTML/CSS, Radix ou shadcn para o runtime nativo.

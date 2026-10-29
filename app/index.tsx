@@ -1,18 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { router, useFocusEffect } from 'expo-router';
+import { setStatusBarStyle } from 'expo-status-bar';
+import { useCallback } from 'react';
 
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <Text accessibilityRole="header" style={styles.title}>InfoVida</Text>
-      <Text style={styles.subtitle}>Your Expo development environment is ready.</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { WelcomeScreen } from '../src/features/onboarding/WelcomeScreen';
+
+export default function Index() {
+  useFocusEffect(useCallback(() => {
+    setStatusBarStyle('light');
+    return () => setStatusBarStyle('dark');
+  }, []));
+  return <WelcomeScreen onStart={() => router.replace('/home')} />;
 }
-
-const styles = StyleSheet.create({
-  container: { alignItems: 'center', flex: 1, justifyContent: 'center', padding: 24 },
-  title: { fontSize: 32, fontWeight: '700', marginBottom: 12 },
-  subtitle: { fontSize: 16, textAlign: 'center' },
-});

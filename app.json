@@ -4,9 +4,8 @@
     "slug": "infovida",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "light",
     "scheme": "infovida",
-    "newArchEnabled": true,
     "plugins": [
       "expo-router",
       "expo-status-bar"
