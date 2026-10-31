@@ -1,5 +1,5 @@
-import { FoundationScreen } from '../../src/features/foundation/FoundationScreen';
+import { RemindersScreen } from '../../src/features/reminders/RemindersScreen';
 
-export default function Screen() {
-  return <FoundationScreen section="reminders" />;
+export default function RemindersRoute() {
+  return <RemindersScreen />;
 }

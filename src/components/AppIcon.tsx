@@ -25,6 +25,14 @@ const icons = {
   forward: { normal: require('../../assets/icons/forward.png'), active: require('../../assets/icons/forward-active.png') },
   trophy: { normal: require('../../assets/icons/trophy.png'), active: require('../../assets/icons/trophy-active.png') },
   shuffle: { normal: require('../../assets/icons/shuffle.png'), active: require('../../assets/icons/shuffle-active.png') },
+  pill: { normal: require('../../assets/icons/pill.png'), active: require('../../assets/icons/pill-active.png') },
+  bellOff: { normal: require('../../assets/icons/bell-off.png'), active: require('../../assets/icons/bell-off-active.png') },
+  warning: { normal: require('../../assets/icons/warning.png'), active: require('../../assets/icons/warning-active.png') },
+  checkCircle: { normal: require('../../assets/icons/check-circle.png'), active: require('../../assets/icons/check-circle-active.png') },
+  clock: { normal: require('../../assets/icons/clock.png'), active: require('../../assets/icons/clock-active.png') },
+  alarm: { normal: require('../../assets/icons/alarm.png'), active: require('../../assets/icons/alarm-active.png') },
+  trash: { normal: require('../../assets/icons/trash.png'), active: require('../../assets/icons/trash-active.png') },
+  edit: { normal: require('../../assets/icons/edit.png'), active: require('../../assets/icons/edit-active.png') },
 } as const;
 export type IconName = keyof typeof icons;
 

@@ -13,7 +13,8 @@ function contrast(a: number[], b: number[]) { const x = luminance(a); const y = 
 test('texto de leitura, avisos e seleção possuem contraste AA com suas superfícies', () => {
   for (const [text, background] of [[colors.body, colors.background], [colors.muted, colors.surface],
     [colors.primary, colors.softBlue], [colors.success, colors.successSoft], [colors.warning, colors.warningSoft],
-    [colors.dangerText, colors.dangerSoft], [colors.surface, colors.primary]]) {
+    [colors.dangerText, colors.dangerSoft], [colors.surface, colors.primary],
+    [colors.warning, '#FDE68A'], [colors.primary, '#EFF6FF'], ['#475569', '#F1F5F9'], [colors.success, '#DCFCE7']]) {
     expect(contrast(rgb(text), rgb(background))).toBeGreaterThanOrEqual(4.5);
   }
 });
