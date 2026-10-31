@@ -16,14 +16,17 @@ As orientações para agentes estão em [AGENTS.md](AGENTS.md).
 | Entrada e navegação | Acesso como visitante, identidade visual compartilhada e cinco abas |
 | Notícias | Seis exemplos fictícios, filtros e leitura dos artigos; sem API |
 | Quiz | Seis categorias, três perguntas demo por categoria, aleatório com até cinco, explicações e resultado |
-| Lembretes | Aba provisória; regras de domínio já portadas e testadas |
+| Lembretes | CRUD de lembretes de medicamentos, contadores (`Total`, `Ativos`, `Tomados hoje`), marcação diária, persistência local e alertas (30 min antes e na hora) |
 | Emergência e Perfil | Apresentações provisórias, sem os fluxos completos |
-| Recompensas e notificações | Especificadas em PRDs, ainda sem telas funcionais |
+| Recompensas e central de notificações | Especificadas em PRDs, ainda sem telas funcionais |
 
 O quiz usa exemplos sobre uso do app e leitura de informações; suas sessões ficam
 somente em memória e são perdidas ao reiniciar. Não há XP, conquistas, sequência
 ou tentativas persistidas. Notícias fictícias também não geram progresso.
-Persistência, notificações nativas, autenticação e backend ainda não estão integrados.
+Os lembretes são salvos localmente no aparelho (`AsyncStorage`, não criptografado) e agendam
+notificações locais 30 minutos antes e no horário configurado quando ativadas; a entrega em
+background com app fechado exige comprovação em build nativa Android/iOS. Autenticação e backend
+ainda não estão integrados.
 
 ## Instalar e testar a branch baixada
 
@@ -88,16 +91,17 @@ safe area, teclado, navegação e acessibilidade no Android.
 O [índice de PRDs](docs/prd/README.md) separa os documentos em:
 
 - **Implementados:** análise inicial e entregas 003–006, no escopo descrito.
-- **Parcialmente implementados:** estabilização (002) e quiz demo (007–009).
-- **Não implementados:** fluxos 010–015, mesmo quando já há domínio ou aba provisória.
+- **Parcialmente implementados:** estabilização (002), quiz demo (007–009) e lembretes/formulário (010–011).
+- **Não implementados:** fluxos 012–015, mesmo quando já há domínio ou aba provisória.
 
 Cada PRD registra o que existe, critérios de aceite e pendências. “Implementado”
 não significa produto completo ou aprovação visual final. Persistência de
 progresso, catálogo de saúde revisado e API continuam como trabalhos futuros.
 
-A próxima área planejada é Lembretes, com
-[PRD-010](docs/prd/nao-implementados/PRD-010-lembretes.md) e
-[PRD-011](docs/prd/nao-implementados/PRD-011-lembrete-formulario.md) lidos juntos.
+Lembretes foi implementado com
+[PRD-010](docs/prd/parcialmente-implementados/PRD-010-lembretes.md) e
+[PRD-011](docs/prd/parcialmente-implementados/PRD-011-lembrete-formulario.md), restando
+comprovação de alarmes em background em build nativa/aparelho e revisão visual/Maestro.
 O pedido atual da equipe define a prioridade; o guia de continuidade orienta
 como retomar também quiz, notícias e os demais fluxos.
 
@@ -133,6 +137,7 @@ Registros das entregas:
 - [Fundação visual](docs/validation/PRD-003-validacao.md) e [entrada](docs/validation/PRD-004-validacao.md).
 - [Notícias e artigos fictícios](docs/validation/PRD-005-006-validacao.md).
 - [Quiz de demonstração](docs/validation/PRD-007-009-demo-validacao.md).
+- [Lembretes e formulário CRUD](docs/validation/PRD-010-011-validacao.md).
 - [Diagnóstico do CI do PR #8](docs/validation/PR-008-ci-diagnostico.md).
 
 A entrega demo documentou 58 testes e exportações Android/web aprovados. Depois,

@@ -53,7 +53,7 @@ conclusões antigas sobre PRs/checks como consulta atual ao GitHub.
 | Entrada | Marca e acesso às abas como visitante | `src/features/onboarding/WelcomeScreen.tsx`, `app/index.tsx` | Revisão visual/acessibilidade; autenticação fora do escopo atual |
 | Notícias | Seis artigos fictícios, filtros, detalhe e recuperação | `src/features/news/`, `app/articles/[id].tsx` | API, conteúdo editorial real e integração de leituras reais ao histórico |
 | Quiz | Seis categorias, 18 perguntas demo, sorteio até cinco, resposta única, explicação, resultado e confirmação de saída | `src/features/quiz/`, `src/domain/quiz.ts`, `src/domain/quizSession.ts`, `app/quiz/` | Conteúdo de saúde revisado, tentativa real persistida e progresso unificado |
-| Lembretes | Regras puras e testes; aba provisória | `src/domain/reminders.ts`, `tests/reminders.test.ts`, PRDs 010/011 | Lista, formulário, repositório, operações assíncronas e integração de agenda |
+| Lembretes | CRUD completo, formulário modal, contadores, marcação/desfazer do dia, persistência local (`AsyncStorage`) e agendamento local (30 min antes e na hora) | `src/features/reminders/`, `src/domain/reminders.ts`, `app/(tabs)/reminders.tsx`, `app/reminders/editor.tsx`, PRDs 010/011 | Comprovação de alarmes em background em build nativa/aparelho Android, Maestro e revisão visual/TalkBack |
 | Emergência | Aba provisória | `src/features/foundation/FoundationScreen.tsx`, PRD-012 | Contatos, discador e revisão editorial das orientações |
 | Perfil/recompensas | Apresentação de visitante; regras de atividade e contratos | `src/domain/activity.ts`, `src/services/contracts.ts`, PRDs 013/014 | Histórico persistente, estatísticas reais, tela de recompensas e regras aprovadas |
 | Notificações | Interface de repositório e especificação | `src/services/contracts.ts`, PRD-015 | Central interna, persistência e serviço de notificações nativas |
@@ -86,12 +86,11 @@ lembretes e notificações são apenas interfaces.
 O pedido atual do usuário define a tarefa. Não implementar todos os PRDs em lote
 nem presumir que o próximo número está automaticamente autorizado.
 
-Sem mudança de prioridade, a próxima área planejada é **Lembretes**, lendo juntos
-[PRD-010](prd/nao-implementados/PRD-010-lembretes.md) e
-[PRD-011](prd/nao-implementados/PRD-011-lembrete-formulario.md), além do PRD-003.
-Leia `src/domain/reminders.ts`, seus testes e `ReminderRepository` antes de escolher
-armazenamento ou criar campos. Lista e editor formam um fluxo de criação/edição;
-uma lista com exemplos fixos não conclui esses PRDs.
+A área de **Lembretes** ([PRD-010](prd/parcialmente-implementados/PRD-010-lembretes.md) e
+[PRD-011](prd/parcialmente-implementados/PRD-011-lembrete-formulario.md)) já possui lista,
+formulário modal, repositório local versionado (`AsyncStorage`) e serviço de agendamento local
+(`expo-notifications`, 30 min antes e na hora). Para evoluir ou validar em aparelho, consulte
+`src/domain/reminders.ts`, `src/features/reminders/` e `docs/validation/PRD-010-011-validacao.md`.
 
 Priorizar cadastro/edição/ações locais com persistência versionada e erros
 recuperáveis. A escolha de storage é pendente; não presumir que AsyncStorage é

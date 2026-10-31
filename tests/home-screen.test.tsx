@@ -14,11 +14,11 @@ describe('fundação e navegação InfoVida', () => {
     expect(screen.getByText('Demonstração — notícias fictícias')).toBeTruthy();
     expect(screen.getAllByRole('tab')).toHaveLength(5);
     expect(screen.getByRole('tab', { name: 'Início' })).toBeSelected();
-    for (const [tab, heading] of [['Quiz', 'Quiz InfoVida'], ['Lembretes', 'Um espaço para organizar sua rotina.'],
+    for (const [tab, heading] of [['Quiz', 'Quiz InfoVida'], ['Lembretes', 'Lembretes de Medicamentos'],
       ['Emergência', 'Emergências'], ['Perfil', 'Bem-vindo, visitante'], ['Início', 'InfoVida']]) {
       await fireEvent.press(screen.getByRole('tab', { name: tab }));
       expect(screen.getByRole('tab', { name: tab })).toBeSelected();
-      expect(screen.getByText(heading)).toBeTruthy();
+      expect(await screen.findByText(heading)).toBeTruthy();
       expect(screen.getAllByRole('tab')).toHaveLength(5);
     }
     await fireEvent.press(screen.getByRole('button', { name: 'Aprenda com o Quiz' }));
