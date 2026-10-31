@@ -1,8 +1,8 @@
 # PRD-010 — Lembretes: lista, ações e exclusão
 
-**Estado atual:** Não implementado como funcionalidade.
+**Estado atual:** Parcialmente implementado — CRUD local, contadores, mensagens iniciais, persistência versionada e agendamento de alertas (30 min antes e no horário) entregues; pendentes comprovação de alarmes em background em build nativa/aparelho Android, Maestro e revisão visual/acessibilidade.
 
-A aba possui somente apresentação provisória. Regras puras de lembretes já foram portadas/testadas, mas lista funcional, ações e persistência ainda precisam ser conectadas.
+Lista funcional em `app/(tabs)/reminders.tsx`, cards com marcação/desfazer do dia, ativar/pausar, editar e excluir com confirmação, repositório local serializado (`AsyncStorage` não criptografado) e serviço de notificações locais (`expo-notifications` no nativo e fallback em primeiro plano na web) conectados. Consulte [a validação local](../../validation/PRD-010-011-validacao.md).
 
 Os registros datados abaixo preservam o contexto de cada etapa. O [índice de PRDs](../README.md) consolida o estado atual.
 
@@ -108,3 +108,11 @@ Jest: domínio e serviços com relógio/agenda mockados. RNTL: ações/erros/di�
 Maestro: CRUD, reinício, permissão negada; teste de notificação em aparelho/build
 separado de Expo Go. Pendente: biblioteca de storage, política de retenção e
 comportamento comprovado de agenda sob restrições Android.
+
+## Registro de implementação — 31/10/2026
+
+- Aba `app/(tabs)/reminders.tsx` conectada a `RemindersScreen`, `ReminderCard` e `RemindersProvider`, com cabeçalho `Lembretes de Medicamentos`, contadores derivados (`Total`, `Ativos`, `Tomados hoje`), banner de ativação/estado de notificações, alerta clínico de atenção e guia `Como usar esta tela:`.
+- Persistência local versionada (`infovida.reminders.v1`) implementada em `localReminderRepository.ts` sobre `@react-native-async-storage/async-storage` (armazenamento privado do app, não criptografado), com fila FIFO serializada, inserção mais recente primeiro, edição sem reordenar e bloqueio seguro diante de dados corrompidos.
+- Notificações locais implementadas em `reminderNotifications.ts` via `expo-notifications` (Android/iOS) e fallback em primeiro plano na web: cada lembrete ativo agenda dois alertas — **30 minutos antes** (com recuo correto de dia na virada da meia-noite) e **no horário exato** — usando textos externos genéricos sem expor nome do medicamento, dosagem ou observações (`LE07`). IDs de agendamento ficam separados em `infovida.reminders.schedules.v1`.
+- Marcação `Tomado hoje` e opção de desfazer permanecem acessíveis mesmo quando o lembrete é pausado em seguida (`LE08`). Exclusão exige `ConfirmDialog` (`LE06`).
+- Limites atuais: entrega em segundo plano com app fechado depende de build nativa e verificação em aparelho físico Android/iOS sob políticas de bateria do sistema; revisão visual, TalkBack, `fontScale` 200% e execução Maestro em emulador/aparelho permanecem pendentes.

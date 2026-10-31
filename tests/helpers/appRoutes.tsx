@@ -10,9 +10,12 @@ import Index from '../../app/index';
 import QuizSessionRoute from '../../app/quiz/session';
 import QuizResultRoute from '../../app/quiz/result/[attemptId]';
 import ArticleRoute from '../../app/articles/[id]';
+import ReminderEditorRoute from '../../app/reminders/editor';
 
 export const appRoutes = {
-  _layout: RootLayout, index: Index, '+not-found': NotFound, 'articles/[id]': ArticleRoute, 'quiz/session': QuizSessionRoute, 'quiz/result/[attemptId]': QuizResultRoute,
+  _layout: RootLayout, index: Index, '+not-found': NotFound,
+  'articles/[id]': ArticleRoute, 'quiz/session': QuizSessionRoute, 'quiz/result/[attemptId]': QuizResultRoute,
+  'reminders/editor': ReminderEditorRoute,
   '(tabs)/_layout': TabsLayout, '(tabs)/home': Home, '(tabs)/quiz': Quiz,
   '(tabs)/reminders': Reminders, '(tabs)/emergency': Emergency, '(tabs)/profile': Profile,
 };

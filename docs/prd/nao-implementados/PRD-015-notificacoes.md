@@ -48,7 +48,7 @@ identificadas e isoladas dos eventos reais e do progresso.
 Central interna e entrega de notificações pelo Android são funcionalidades
 separadas: abrir o painel não pede permissão de notificação. Não afirmar que a
 central garante entrega em segundo plano. Integração futura de lembretes deve
-seguir [PRD-010](PRD-010-lembretes.md) e [PRD-011](PRD-011-lembrete-formulario.md).
+seguir [PRD-010](../parcialmente-implementados/PRD-010-lembretes.md) e [PRD-011](../parcialmente-implementados/PRD-011-lembrete-formulario.md).
 Conteúdo de saúde sensível não deve aparecer em notificação externa.
 
 ## Interações e estados

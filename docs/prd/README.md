@@ -1,7 +1,7 @@
 # PRDs do InfoVida — estado de implementação
 
-Versão 1 — 27/10/2026. PRDs 003–006 (fundação, entrada, feed e leitura) implementados
-localmente; PRDs 007–009 parcialmente implementados em demonstração. Conferência visual no aparelho pendente.
+Versão 1.1 — 31/10/2026. PRDs 003–006 (fundação, entrada, feed e leitura) implementados
+localmente; PRDs 007–009 parcialmente implementados em demonstração; PRDs 010–011 (lembretes e formulário CRUD com persistência local e agendamento de alertas) parcialmente implementados. Conferência visual no aparelho pendente.
 Base executável: `InfoVida/`, Expo SDK 58, React Native, TypeScript e Expo Router.
 Referência visual: `InfoVida_FigmaMake/`, exportação recebida pela equipe.
 
@@ -40,16 +40,16 @@ descrevem os limites; a existência de uma aba provisória não significa que se
 | [PRD-007 — Quiz: categorias e início](parcialmente-implementados/PRD-007-quiz-categorias.md) — parcialmente-implementados | Seis categorias, contagens derivadas, sorteio e criação de sessão entregues. | Faltam catálogo de saúde revisado e histórico persistente compartilhado com Perfil; sequência indisponível é indicada sem número fictício. |
 | [PRD-008 — Quiz: sessão de perguntas](parcialmente-implementados/PRD-008-quiz-perguntas.md) — parcialmente-implementados | Respostas únicas, explicação, avanço e confirmação de saída entregues. | Faltam conteúdo de saúde revisado, persistência e contrato de tentativa real; demonstração fica apenas na memória. |
 | [PRD-009 — Quiz: resultado](parcialmente-implementados/PRD-009-quiz-resultado.md) — parcialmente-implementados | Pontuação derivada, repetição e retorno entregues. | Faltam gravação idempotente de tentativa real, histórico e regras aprovadas de XP/conquistas; a demonstração não gera progresso. |
-| [PRD-010 — Lembretes: lista, ações e exclusão](nao-implementados/PRD-010-lembretes.md) — nao-implementados | A aba possui somente apresentação provisória. | Regras puras de lembretes já foram portadas/testadas, mas lista funcional, ações e persistência ainda precisam ser conectadas. |
-| [PRD-011 — Formulário de criação e edição de lembrete](nao-implementados/PRD-011-lembrete-formulario.md) — nao-implementados | Formulário, rotas de criação/edição, persistência e integração de agendamento ainda precisam ser implementados; validação de domínio já existe. | Consulte os limites do documento. |
+| [PRD-010 — Lembretes: lista, ações e exclusão](parcialmente-implementados/PRD-010-lembretes.md) — parcialmente-implementados | Lista funcional, contadores (`Total`, `Ativos`, `Tomados hoje`), mensagens iniciais, ações (`Tomei`/desfazer, ativar/pausar, editar, remover com confirmação), persistência local versionada e agendamento de notificações (30 min antes e na hora) entregues. | Faltam comprovação de alarmes em background em build nativa/aparelho Android, Maestro e revisão visual/TalkBack. |
+| [PRD-011 — Formulário de criação e edição de lembrete](parcialmente-implementados/PRD-011-lembrete-formulario.md) — parcialmente-implementados | Formulário modal (`app/reminders/editor.tsx`), validação, atalhos de dias e horário, observações, proteção de descarte, persistência e integração de agendamento entregues. | Faltam conferência de teclado, TalkBack, `fontScale` 200% e execução Maestro em aparelho Android. |
 | [PRD-012 — Emergência e acesso a contatos](nao-implementados/PRD-012-emergencia.md) — nao-implementados | A aba possui somente apresentação provisória. | Contatos, discador e orientações com revisão editorial ainda precisam ser implementados. |
 | [PRD-013 — Perfil, atividade e informações do projeto](nao-implementados/PRD-013-perfil.md) — nao-implementados | Existe apresentação de visitante, sem histórico real conectado. | Estatísticas, edição e informações previstas no PRD continuam pendentes. |
 | [PRD-014 — Recompensas, nível e conquistas](nao-implementados/PRD-014-recompensas.md) — nao-implementados | Tela, catálogo e integração com histórico ainda pendentes. | Regras de XP, nível e conquistas são propostas a confirmar. |
 | [PRD-015 — Central de notificações dentro do app](nao-implementados/PRD-015-notificacoes.md) — nao-implementados | Central interna, armazenamento e integração com notificações ainda pendentes; não há serviço de notificações nativas implementado. | Consulte os limites do documento. |
 
 A pasta `implementados/` contém a análise e as entregas 003–006 no escopo atual.
-`parcialmente-implementados/` contém estabilização e quiz (002, 007–009).
-`nao-implementados/` contém os fluxos 010–015; alguns já têm domínio ou apresentação provisória.
+`parcialmente-implementados/` contém estabilização, quiz e lembretes (002, 007–011).
+`nao-implementados/` contém os fluxos 012–015; alguns já têm domínio ou apresentação provisória.
 
 ## Índice e rastreabilidade
 
@@ -62,8 +62,8 @@ A pasta `implementados/` contém a análise e as entregas 003–006 no escopo at
 | [PRD-007 — Categorias do quiz](parcialmente-implementados/PRD-007-quiz-categorias.md) | Quiz.tsx: seleção | app/(tabs)/quiz.tsx |
 | [PRD-008 — Perguntas do quiz](parcialmente-implementados/PRD-008-quiz-perguntas.md) | Quiz.tsx: pergunta | app/quiz/session.tsx |
 | [PRD-009 — Resultado do quiz](parcialmente-implementados/PRD-009-quiz-resultado.md) | Quiz.tsx: resultado | app/quiz/result/[attemptId].tsx |
-| [PRD-010 — Lembretes](nao-implementados/PRD-010-lembretes.md) | Reminders.tsx: lista e exclusão | app/(tabs)/reminders.tsx |
-| [PRD-011 — Formulário de lembrete](nao-implementados/PRD-011-lembrete-formulario.md) | ReminderForm | app/reminders/editor.tsx |
+| [PRD-010 — Lembretes](parcialmente-implementados/PRD-010-lembretes.md) | Reminders.tsx: lista e exclusão | app/(tabs)/reminders.tsx |
+| [PRD-011 — Formulário de lembrete](parcialmente-implementados/PRD-011-lembrete-formulario.md) | ReminderForm | app/reminders/editor.tsx |
 | [PRD-012 — Emergência](nao-implementados/PRD-012-emergencia.md) | Emergency.tsx | app/(tabs)/emergency.tsx |
 | [PRD-013 — Perfil](nao-implementados/PRD-013-perfil.md) | Profile.tsx | app/(tabs)/profile.tsx |
 | [PRD-014 — Recompensas](nao-implementados/PRD-014-recompensas.md) | Rewards.tsx | app/rewards.tsx |
@@ -118,4 +118,6 @@ PRD-007: categorias e início implementados em modo demo; PRDs 008/009: pergunta
 explicações e resultado demo implementados. Persistência, catálogo clínico revisado,
 XP e progresso real continuam pendentes. Consulte a
 [validação do quiz demo](../validation/PRD-007-009-demo-validacao.md).
-PRDs 010–015: especificados, ainda não implementados como fluxos completos.
+PRDs 010/011: CRUD de lembretes, formulário modal, persistência local (`AsyncStorage` não criptografado) e agendamento de notificações locais (30 min antes e na hora) implementados; comprovação em build nativa/aparelho Android e Maestro permanecem pendentes. Consulte a
+[validação de lembretes](../validation/PRD-010-011-validacao.md).
+PRDs 012–015: especificados, ainda não implementados como fluxos completos.

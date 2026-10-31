@@ -1,8 +1,8 @@
 # PRD-011 — Formulário de criação e edição de lembrete
 
-**Estado atual:** Não implementado como funcionalidade.
+**Estado atual:** Parcialmente implementado — formulário modal de criação/edição, validação, atalhos de dias/horário, observações, proteção de descarte, persistência e integração com agendamento entregues; pendentes revisão visual/teclado/TalkBack e execução Maestro em aparelho Android.
 
-Formulário, rotas de criação/edição, persistência e integração de agendamento ainda precisam ser implementados; validação de domínio já existe.
+Rota `app/reminders/editor.tsx` apresentada como modal no Stack (sem tab bar inferior), integrada a `RemindersProvider`, validação de domínio e agendamento de alertas 30 minutos antes e no horário. Consulte [a validação local](../../validation/PRD-010-011-validacao.md).
 
 Os registros datados abaixo preservam o contexto de cada etapa. O [índice de PRDs](../README.md) consolida o estado atual.
 
@@ -88,3 +88,10 @@ Nome e notes não vão para URL, logs, analytics ou título de notificação ext
 Jest: validação e preservação de campos; RNTL: entrada/erros/save/cancelamento;
 Maestro: criar, editar e testar teclado real. Pendente: escolha de persistência
 e seletor de hora; várias doses por registro são evolução de domínio/PRD.
+
+## Registro de implementação — 31/10/2026
+
+- Rota `app/reminders/editor.tsx` (`presentation: 'modal'`) implementada em `ReminderEditorScreen.tsx`, acessível pelos botões `+` (`Novo lembrete` no cabeçalho e `+ Adicionar lembrete` fixo no rodapé) e pelo botão de editar em cada card.
+- Campos implementados na ordem prevista: nome do medicamento (obrigatório, até 120 caracteres), dosagem (opcional, até 160 caracteres, exibida como `Sem dosagem informada` quando vazia), horário `HH:mm` 24h (com entrada validada, ajustes `-15m`/`+15m` e horários rápidos `08:00`, `12:00`, `18:00`, `20:00`), dias da semana `Dom`–`Sáb` com atalhos `Todos os dias`, `Dias úteis` e `Fins de semana`, chave de notificação do lembrete (alertas 30 min antes e na hora) e campo final multiline de observações (até 500 caracteres).
+- Proteção contra toque duplicado ao salvar (`LF04`), geração única de ID por tentativa de criação, preservação de `id`/`takenDate`/`notifiedAt` na edição (`LF05`), suporte a preset `water` sem gravação automática (`LF01`), recuperação para ID inexistente e confirmação `Descartar alterações?` no botão Fechar e na navegação Voltar (`LF08`).
+- Pendentes: conferência de teclado físico/virtual, TalkBack, `fontScale` 200% e fluxo Maestro em aparelho/emulador Android.
