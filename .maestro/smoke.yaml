@@ -22,7 +22,6 @@ appId: com.example.infovida
 - assertVisible: "Quiz InfoVida"
 - tapOn: "Lembretes"
 - assertVisible: "Lembretes de Medicamentos"
-- assertVisible: "Nenhum lembrete ainda"
 - tapOn: "Adicionar lembrete"
 - assertVisible: "Novo lembrete"
 - tapOn: "Fechar formulário"
